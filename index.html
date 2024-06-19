@@ -17,9 +17,9 @@
 
 <body>
 
-    <audio class="song" loop autoplay>
-        <source src="./music/hbd.mpeg">
-        </source>
+    <audio class="song" loop autoplay muted>
+        <source src="./music/hbd.mp3" type="audio/mpeg">
+        <source src="./music/hbd.ogg" type="audio/ogg">
         Your browser isn't invited for super fun audio time.
     </audio>
 
@@ -97,19 +97,6 @@
                 <img src="img/ballon2.svg" alt="" />
                 <img src="img/ballon1.svg" alt="" />
                 <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
             </div>
         </div>
 
@@ -147,11 +134,18 @@
         </div>
     </div>
 
-</body>
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="application/javascript" src="./script/main.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const audio = document.querySelector('.song');
+            audio.muted = false;
+            audio.play().catch(error => console.error('Error playing audio:', error));
+        });
+    </script>
 
+</body>
 </html>
